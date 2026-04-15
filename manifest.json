@@ -1,0 +1,22 @@
+{
+  "name": "mindNet - File Sharing",
+  "short_name": "mindNet",
+  "description": "Modern file sharing platform powered by MDai",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#667eea",
+  "theme_color": "#667eea",
+  "icons": [
+    {
+      "src": "icon (1).ico",
+      "sizes": "any",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "logo.png",
+      "sizes": "192x192 512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    }
+  ]
+}

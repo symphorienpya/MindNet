@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="icon (1).ico">
+  <link rel="apple-touch-icon" href="logo.png">
+  <title>mindNet - File Sharing </title>
+<link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="extraordinary.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script>
+    pdfjsLib.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js`;
+  </script>
+  <meta name="theme-color" content="#667eea">
+  <link rel="manifest" href="manifest.json">
+</head>
+<body>
+  <header>
+    <h1><img src="logo.png"  style="width: 250px; height: 250px; vertical-align: middle; margin-right: 10px;"></h1>
+    <p>Upload, preview, and share files locally</p>
+  </header>
+
+  <main>
+    <section id="upload-zone" class="upload-area">
+      <div class="upload-icon">📁</div>
+      <p>Drag &amp; drop files here or click to browse</p>
+      <input type="file" id="file-input" multiple accept="image/*,application/pdf,*/*">
+    </section>
+
+    <section id="file-list">
+      <h2>Your Files</h2>
+      <div class="file-controls">
+        <input type="text" id="search-input" placeholder="🔍 Search files...">
+        <select id="sort-select">
+          <option value="name">Sort by Name</option>
+          <option value="size">Sort by Size</option>
+          <option value="date">Sort by Date</option>
+        </select>
+        <div id="stats">0 files | 0 MB</div>
+      </div>
+      <ul id="files"></ul>
+    </section>
+  </main>
+
+<!-- Password Modal -->
+  <div id="password-modal" class="modal" style="background: rgba(0,0,0,0.9);">
+    <div class="modal-content" style="max-width: 400px;">
+      <h2 style="text-align: center; margin-bottom: 1rem;">🔐 Enter Password</h2>
+      <input type="password" id="password-input" placeholder="Password to access files" style="width: 100%; padding: 1rem; font-size: 1.2rem; border-radius: 10px; border: none; margin-bottom: 1rem;">
+      <div style="display: flex; gap: 1rem;">
+        <button id="password-submit" style="flex: 1; padding: 1rem; border-radius: 10px; border: none; background: #4CAF50; color: white; font-size: 1.1rem; cursor: pointer;">Unlock</button>
+        <button id="password-cancel" style="flex: 1; padding: 1rem; border-radius: 10px; border: none; background: #f44336; color: white; font-size: 1.1rem; cursor: pointer;">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+<!-- Preview Modal -->
+  <div id="preview-modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&amp;times;</span>
+      <div id="preview"></div>
+      <div class="modal-actions">
+        <button id="share-btn">Share Link</button>
+        <button id="download-btn">Download</button>
+        <button id="delete-btn">Delete</button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>&copy; 2024 mindNet. Powered by <strong>MDai</strong> | <a href="#" onclick="mindNetApp.clearAll()">Clear All Files</a></p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
